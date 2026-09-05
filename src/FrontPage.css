@@ -4,3 +4,10 @@
 		linear-gradient(135deg, rgba(118, 196, 87, 0.16), transparent 40%),
 		var(--cream);
 }
+
+.product-grid{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 20px;
+	padding: 20px;
+}
