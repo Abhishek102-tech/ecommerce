@@ -1,0 +1,56 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.card p {
+    margin: 5px 0;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin: 10px 0 4px;
+    font-size: 14px;
+}
+
+.quantity-selector select {
+    padding: 4px 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+}
+
+.card button {
+    background-color: #2a7c13;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #76c457;
+}
