@@ -1,7 +1,7 @@
 import "./Card.css";
 import { useState } from "react";
 
-function Card({title, description, imageUrl,price}) {
+function Card({ title, description, imageUrl, price, onAddToCart }) {
     const [quantity, setQuantity] = useState(1);
 
     return(
@@ -9,7 +9,7 @@ function Card({title, description, imageUrl,price}) {
             <img src={imageUrl} alt={title} />
             <h2>{title}</h2>
             <p>{description}</p>
-            <p>${price}</p>
+            <p className="card-price">${price.toFixed(2)}</p>
             <label className="quantity-selector" htmlFor={`quantity-${title}`}>
                 Quantity
                 <select
@@ -24,7 +24,7 @@ function Card({title, description, imageUrl,price}) {
                     ))}
                 </select>
             </label>
-            <button>Add to Cart</button>
+            <button type="button" onClick={() => onAddToCart(quantity)}>Add to bag</button>
         </div>
     )
 }

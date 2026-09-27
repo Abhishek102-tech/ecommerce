@@ -1,62 +1,34 @@
 import "./FrontPage.css";
-import Header from "./components/Header";
 import Card from "./components/Card";
-import ceramicVaseImage from "./assets/ceramicVase.webp";
-import woodenCuttingBoardImage from "./assets/woodenCuttingBoard.jpg";
-import stainlessSteelWaterBottleImage from "./assets/stainlessStellBottle.webp";
-import cottonThrowBlanketImage from "./assets/CottonBlanket.jpg";
-import ceramicMugSetImage from "./assets/CeramicMugSet.jpg";
+import { products } from "./products";
 
-
-const products = [
-    {
-        title: "Ceramic Vase",
-        description: "A beautiful ceramic vase for your home decor.",
-        imageUrl: ceramicVaseImage,
-        price: 29.99,
-    },
-    {
-        title: "Wooden Cutting Board",
-        description: "A durable wooden cutting board for your kitchen.",
-        imageUrl: woodenCuttingBoardImage,
-        price: 19.99,
-    },
-    {
-        title: "Stainless Steel Water Bottle",
-        description: "A sleek stainless steel water bottle to keep your drinks cold.",
-        imageUrl: stainlessSteelWaterBottleImage,
-        price: 24.99,
-    },
-    {
-        title: "Cotton Throw Blanket",
-        description: "A soft cotton throw blanket for cozy evenings.",
-        imageUrl: cottonThrowBlanketImage,
-        price: 39.99,
-    },
-    {
-        title: "Ceramic Mug Set",
-        description: "A set of ceramic mugs for your morning coffee.",
-        imageUrl: ceramicMugSetImage,
-        price: 14.99,
-    },
-]
-
-function FrontPage() {
+function FrontPage({ products: productList = products, onAddToCart, onViewCart }) {
     return (
-    <main className="app-shell">
-      <Header />
+    <>
+        <section className="storefront-intro">
+            <div>
+                <p className="eyebrow">The everyday edit</p>
+                <h1>Small things, <em>beautifully</em> chosen.</h1>
+                <p className="intro-copy">Useful, well-made pieces for the rituals that make home feel like yours.</p>
+            </div>
+            <button className="intro-link" type="button" onClick={onViewCart}>
+                <span>View your bag</span>
+                <span className="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+            </button>
+        </section>
         <section className="product-grid">
-            {products.map((product) => (
+            {productList.map((product) => (
                 <Card
                     key={product.title}
                     title={product.title}
                     description={product.description}
                     imageUrl={product.imageUrl}
                     price={product.price}
+                    onAddToCart={(quantity) => onAddToCart(product, quantity)}
                 />
             ))}
         </section>
-    </main>
+    </>
     )
 }
 

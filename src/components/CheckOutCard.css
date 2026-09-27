@@ -1,0 +1,73 @@
+.checkout-card {
+	display: grid;
+	grid-template-columns: 5.5rem 1fr auto;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem 0;
+	border-bottom: 1px solid rgba(42, 124, 19, 0.18);
+}
+
+.checkout-card-image {
+	width: 5.5rem;
+	height: 5.5rem;
+	object-fit: cover;
+	border-radius: 0.45rem;
+}
+
+.checkout-card-title {
+	margin: 0 0 0.3rem;
+	font-family: 'Playfair Display', serif;
+	font-size: 1.2rem;
+}
+
+.checkout-card-description {
+	max-width: 28rem;
+	margin: 0 0 0.5rem;
+	color: var(--muted);
+	font-size: 0.8rem;
+}
+
+.checkout-card-price {
+	margin: 0;
+	font-weight: 700;
+}
+
+.checkout-card-controls {
+	display: grid;
+	grid-template-columns: auto 3.2rem;
+	align-items: center;
+	gap: 0.35rem;
+	color: var(--muted);
+	font-size: 0.75rem;
+}
+
+.checkout-card-controls select {
+	padding: 0.35rem;
+	border: 1px solid rgba(42, 124, 19, 0.28);
+	border-radius: 0.3rem;
+	color: var(--ink);
+	background: var(--cream);
+}
+
+.checkout-card-controls strong {
+	grid-column: 1 / -1;
+	color: var(--ink);
+	font-size: 0.9rem;
+	text-align: right;
+}
+
+@media (max-width: 560px) {
+	.checkout-card {
+		grid-template-columns: 4.5rem 1fr;
+	}
+
+	.checkout-card-image {
+		width: 4.5rem;
+		height: 4.5rem;
+	}
+
+	.checkout-card-controls {
+		grid-column: 2;
+		justify-self: start;
+	}
+}
